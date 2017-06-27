@@ -1,5 +1,5 @@
 FROM ubuntu
-MAINTAINER R Trisith
+MAINTAINER GCS
 ################# Install packages #############################
 # install curl, wget, git, nano
 RUN 	apt-get update && apt-get install -y curl && apt-get install -y wget && apt-get install -y git && \
@@ -35,11 +35,10 @@ RUN	sed -i 's/appendonly no/appendonly yes/g' /etc/redis/redis.conf
 RUN 	git clone https://github.com/igridproject/node-bigstream.git ~/node-bigstream
 RUN 	npm install --prefix ~/node-bigstream
 
-EXPOSE 19980 19080 19180 6379
+EXPOSE 19980 19080 19180 6379 5672
 
 WORKDIR /root/node-bigstream
 # start server
 ENTRYPOINT 	rabbitmq-server -detached && \
-		redis-server && \
-		pm2-docker pm2-default.json && \
-		/bin/bash
+		/etc/init.d/redis-server start  && \
+		pm2-docker pm2-default.json
