@@ -39,7 +39,6 @@ EXPOSE 19980 19080 19180 6379
 
 # start server
 ENTRYPOINT 	rabbitmq-server -detached && \
-		/etc/init.d/redis-server start && \
+		redis-server && \
+		pm2-docker /root/node-bigstream/pm2-default.json && \
 		/bin/bash
-		
-CMD ["pm2-docker", "~/node-bigstream/pm2-default.json"]
