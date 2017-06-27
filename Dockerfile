@@ -37,8 +37,9 @@ RUN 	npm install --prefix ~/node-bigstream
 
 EXPOSE 19980 19080 19180 6379
 
+WORKDIR /root/node-bigstream
 # start server
 ENTRYPOINT 	rabbitmq-server -detached && \
 		redis-server && \
-		pm2-docker /root/node-bigstream/pm2-default.json && \
+		pm2-docker pm2-default.json && \
 		/bin/bash
