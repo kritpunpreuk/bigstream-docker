@@ -34,10 +34,12 @@ RUN	sed -i 's/appendonly no/appendonly yes/g' /etc/redis/redis.conf
 # big-stream clone
 RUN 	git clone https://github.com/igridproject/node-bigstream.git ~/node-bigstream
 RUN 	npm install --prefix ~/node-bigstream
+RUN		mkdir -p /var/bigstream/data
 
 EXPOSE 19980 19080 19180 6379 5672
 
 WORKDIR /root/node-bigstream
+
 # start server
 ENTRYPOINT 	rabbitmq-server -detached && \
 		/etc/init.d/redis-server start  && \
