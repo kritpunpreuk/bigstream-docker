@@ -1,8 +1,8 @@
 FROM ubuntu
 MAINTAINER GCS
 ################# Install packages #############################
-# install curl, wget, git, nano
-RUN 	apt-get update && apt-get install -y curl && apt-get install -y wget && apt-get install -y git && \
+# install curl, wget, git, nano, python
+RUN 	apt-get update && apt-get install -y curl && apt-get install -y wget && apt-get install -y git && apt-get install -y python && \
 	apt-get install -y nano
 
 # nodeJS
@@ -43,4 +43,5 @@ WORKDIR /root/node-bigstream
 # start server
 ENTRYPOINT 	rabbitmq-server -detached && \
 		/etc/init.d/redis-server start  && \
+		sleep 3  && \
 		pm2-docker pm2-default.json
