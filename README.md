@@ -1,6 +1,7 @@
 # bigstream-docker
 A Docker Image for [BigStream](https://github.com/igridproject/node-bigstream)
 
+see Docker CE Installation [https://docs.docker.com/engine/installation/](https://docs.docker.com/engine/installation/)
 ## Build
 ทำการ build image จาก Dockerfile
 ```
