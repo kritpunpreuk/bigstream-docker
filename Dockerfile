@@ -43,5 +43,5 @@ WORKDIR /root/node-bigstream
 # start server
 ENTRYPOINT 	rabbitmq-server -detached && \
 		/etc/init.d/redis-server start  && \
-		sleep 5  && \
+		sleep 3  && \
 		pm2-docker pm2-default.json
