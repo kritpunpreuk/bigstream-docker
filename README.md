@@ -34,5 +34,5 @@ docker exec -it node_bigstream pm2 restart all
 
 * update bigstream from Git
 ```
-docker exec -it node_bigstream pm2 git pull
+docker exec -it node_bigstream git pull
 ```
