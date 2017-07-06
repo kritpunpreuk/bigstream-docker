@@ -31,3 +31,8 @@ docker exec -it node_bigstream pm2 monit
 ```
 docker exec -it node_bigstream pm2 restart all
 ```
+
+* update bigstream from Git
+```
+docker exec -it node_bigstream pm2 git pull
+```
