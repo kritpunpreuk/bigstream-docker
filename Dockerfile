@@ -3,7 +3,7 @@ MAINTAINER GCS
 ################# Install packages #############################
 # install curl, wget, git, nano, python
 RUN 	apt-get update && apt-get install -y curl && apt-get install -y wget && apt-get install -y git && apt-get install -y python && \
-	apt-get install -y nano
+	apt-get install -y nano && apt-get install -y libssl-dev
 
 # nodeJS
 RUN	curl -sL https://deb.nodesource.com/setup_6.x | bash -
