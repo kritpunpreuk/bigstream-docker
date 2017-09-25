@@ -1,9 +1,9 @@
 FROM ubuntu
 MAINTAINER GCS
 ################# Install packages #############################
-# install curl, wget, git, nano, python
+# install curl, wget, git, vim, python
 RUN 	apt-get update && apt-get install -y curl && apt-get install -y wget && apt-get install -y git && apt-get install -y python && \
-	apt-get install -y nano && apt-get install -y libssl-dev
+	apt-get install -y vim && apt-get install -y libssl-dev
 
 # nodeJS
 RUN	curl -sL https://deb.nodesource.com/setup_6.x | bash -
@@ -26,9 +26,12 @@ RUN	wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc | \
 RUN	apt-get update
 RUN	apt-get install -y rabbitmq-server
 
-# edit redis permanent store
+# edit redis conf
 RUN	sed -i 's/appendonly no/appendonly yes/g' /etc/redis/redis.conf
+RUN	sed -i 's/bind 127.0.0.1/bind 0.0.0.0/g' /etc/redis/redis.conf
 
+# rabbit conf
+ADD rabbit_conf/* /etc/rabbitmq/
 ################################################################
 
 # big-stream clone
