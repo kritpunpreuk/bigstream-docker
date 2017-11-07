@@ -1,4 +1,4 @@
-# BigStream Docker (Separate service version)
+# BigStream Docker
 Docker Image for [BigStream](https://github.com/igridproject/node-bigstream)
 
 from orginal bundle version : [bigstream-docker](https://github.com/igridproject/bigstream-docker)
@@ -10,7 +10,7 @@ cd bigstream-docker
 docker-compose up
 ```
 
-## Mount path
+## Container mount path
 
 bigstream datastore
 ```
