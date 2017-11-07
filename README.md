@@ -1,9 +1,7 @@
 # BigStream Docker (Separate service version)
 Docker Image for [BigStream](https://github.com/igridproject/node-bigstream)
 
-see: Docker CE Installation [https://docs.docker.com/engine/installation/](https://docs.docker.com/engine/installation/)
-
-see: bundle version [igridproject/bigstream-docker/](https://github.com/igridproject/bigstream-docker)
+from orginal bundle version : [bigstream-docker](https://github.com/igridproject/bigstream-docker)
 
 ## git clone
 ```
