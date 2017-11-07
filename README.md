@@ -5,7 +5,6 @@ from orginal bundle version : [bigstream-docker](https://github.com/igridproject
 
 ## Start docker composer
 ```
-git clone https://github.com/kritpunpreuk/bigstream-docker.git
 cd bigstream-docker
 docker-compose up
 ```
