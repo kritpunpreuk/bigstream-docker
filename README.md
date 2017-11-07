@@ -1,7 +1,9 @@
-# BigStream Docker
+# BigStream Docker (Separate service version)
 Docker Image for [BigStream](https://github.com/igridproject/node-bigstream)
 
 see: Docker CE Installation [https://docs.docker.com/engine/installation/](https://docs.docker.com/engine/installation/)
+
+see: bundle version [igridproject/bigstream-docker/](https://github.com/igridproject/bigstream-docker)
 
 ## git clone
 ```
@@ -14,19 +16,19 @@ cd bigstream-docker
 docker-compose up
 ```
 
-## mount path
+## Mount path
 
 bigstream datastore
 ```
-bigstreamdata
+bigstream-docker/bigstreamdata
 ```
 
 rabbitmq hoem
 ```
-rabbitmq/home
+bigstream-docker/rabbitmq/home
 ```
 
 redis data
 ```
-redis/data
+bigstream-docker/redis/data
 ```
