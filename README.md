@@ -9,6 +9,24 @@ git clone https://github.com/kritpunpreuk/bigstream-docker.git
 cd bigstream-docker
 docker-compose up
 ```
+## Command
+exec bigstream container shell
+```
+docker exec -it node_bigstream /bin/bash
+```
+monitor bigstream process
+```
+docker exec -it node_bigstream pm2 monit
+```
+restart all bigstream process
+```
+docker exec -it node_bigstream pm2 restart all
+```
+
+update bigstream from Git
+```
+docker exec -it node_bigstream git pull
+
 
 ## Container mount path
 
