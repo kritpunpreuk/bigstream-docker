@@ -6,7 +6,7 @@ from orginal bundle version : [bigstream-docker](https://github.com/igridproject
 ## Start docker composer
 ```
 cd bigstream-docker
-docker-compose up
+docker-compose up -d
 ```
 ## Command
 exec bigstream container shell
@@ -21,11 +21,15 @@ restart all bigstream process
 ```
 docker exec -it node_bigstream pm2 restart all
 ```
-
 update bigstream from Git
 ```
 docker exec -it node_bigstream git pull
-
+```
+see Redis or Rabbitmq logs
+```
+docker container logs redis_bigstream 
+docker container logs rabbitmq_bigstream 
+```
 
 ## Container mount path
 
@@ -43,3 +47,4 @@ redis data
 ```
 bigstream-docker/redis/data
 ```
+
