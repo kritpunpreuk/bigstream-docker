@@ -3,6 +3,7 @@ Docker Image for [BigStream](https://github.com/igridproject/node-bigstream)
 
 from orginal bundle version : [bigstream-docker](https://github.com/igridproject/bigstream-docker)
 
+see install docker-composer : [https://github.com/docker/compose/releases](https://github.com/docker/compose/releases)
 ## Start docker composer
 ```
 cd bigstream-docker
