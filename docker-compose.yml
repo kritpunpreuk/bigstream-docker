@@ -1,6 +1,7 @@
 version: '3'
 services:
   bigstream:
+    image: "bigstream:${TAG}"
     build: ./bigstream/
     container_name: node_bigstream
     networks:
