@@ -26,5 +26,7 @@ EXPOSE 19980 19080 19180
 
 WORKDIR /root/node-bigstream
 
+RUN     git pull
+
 # start server
 ENTRYPOINT 	pm2-docker pm2-default.json
