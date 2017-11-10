@@ -33,7 +33,7 @@ docker container logs redis_bigstream
 docker container logs rabbitmq_bigstream 
 ```
 
-##  environment variable
+##  environment variable (.env file)
 
 image tag version
 ```
@@ -66,3 +66,4 @@ eg. specify volumn mount for bigstream data
 export BIGSTREAM_VOLUMN=NEWPATH
 docker-compose up -d
 ```
+some system using sudo command did not pass environment variable use sudo -E docker-compose up instread.
