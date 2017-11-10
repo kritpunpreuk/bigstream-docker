@@ -4,6 +4,7 @@ Docker Image for [BigStream](https://github.com/igridproject/node-bigstream)
 from orginal bundle version : [bigstream-docker](https://github.com/igridproject/bigstream-docker)
 
 see install docker-composer : [https://github.com/docker/compose/releases](https://github.com/docker/compose/releases)
+
 ## Start docker composer
 ```
 cd bigstream-docker
@@ -32,20 +33,36 @@ docker container logs redis_bigstream
 docker container logs rabbitmq_bigstream 
 ```
 
-## Container mount path
+##  environment variable
 
-bigstream datastore
+image tag version
 ```
-bigstream-docker/bigstreamdata
-```
-
-rabbitmq hoem
-```
-bigstream-docker/rabbitmq/home
+BIGSTREAM_TAG=latest
+REDIS_TAG=3.2.11
+RABBITMQ_TAG=3.6.12
 ```
 
-redis data
+bigstream datastore volumn path
 ```
-bigstream-docker/redis/data
+BIGSTREAM_VOLUMN=./bigstreamdata
 ```
 
+redis data volumn path
+```
+REDIS_VOLUMN=./redis/data
+```
+
+rabbitmq volumn and config path
+```
+RABBITMQ_VOLUMN=./rabbitmq/home
+RABBITMQ_CONFIG=./rabbitmq/rabbitconf/rabbitmq.config
+```
+
+## Override default environment variable
+use export to setup environment variable for override default configuration
+
+eg. specify volumn mount for bigstream data
+```
+export BIGSTREAM_VOLUMN=NEWPATH
+docker-compose up -d
+```

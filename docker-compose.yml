@@ -1,7 +1,7 @@
 version: '3'
 services:
   bigstream:
-    image: "bigstream:${TAG}"
+    image: "bigstream:${BIGSTREAM_TAG}"
     build: ./bigstream/
     container_name: node_bigstream
     networks:
@@ -12,24 +12,24 @@ services:
      - "19080:19080"
      - "19180:19180"
     volumes:
-     - ./bigstreamdata:/var/bigstream/data
+     - ${BIGSTREAM_VOLUMN}:/var/bigstream/data
   redis:
-    image: "redis:3.2.11"
+    image: "redis:${REDIS_TAG}"
     command: redis-server --appendonly yes
     container_name: redis_bigstream
     networks:
      - backend
     volumes:
-     - ./redis/data:/data
+     - ${REDIS_VOLUMN}:/data
   rabbitmq:
-    image: "rabbitmq:3.6.12"
+    image: "rabbitmq:${RABBITMQ_TAG}"
     command: rabbitmq-server --hostname rabbitmq_bigstream
     container_name: rabbitmq_bigstream
     networks:
      - backend
     volumes:
-     - ./rabbitmq/rabbitconf/rabbitmq.config:/etc/rabbitmq/rabbitmq.config
-     - ./rabbitmq/home:/var/lib/rabbitmq
+     - ${RABBITMQ_CONFIG}:/etc/rabbitmq/rabbitmq.config
+     - ${RABBITMQ_VOLUMN}:/var/lib/rabbitmq
 networks:
   frontend:
   backend:
