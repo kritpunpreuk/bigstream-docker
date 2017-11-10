@@ -33,7 +33,7 @@ docker container logs redis_bigstream
 docker container logs rabbitmq_bigstream 
 ```
 
-##  environment variable (.env file)
+## default environment variable (.env file)
 
 image tag version
 ```
@@ -58,10 +58,10 @@ RABBITMQ_VOLUMN=./rabbitmq/home
 RABBITMQ_CONFIG=./rabbitmq/rabbitconf/rabbitmq.config
 ```
 
-## Override default environment variable
-use export to setup environment variable for override default configuration
+## Override default environment variable file
+use export command 
 
-eg. specify volumn mount for bigstream data
+eg. specified volumn mount for bigstream data
 ```
 export BIGSTREAM_VOLUMN=NEWPATH
 docker-compose up -d
