@@ -19,6 +19,8 @@ services:
     container_name: redis_bigstream
     networks:
      - backend
+    ports:
+     - "6379:6379"
     volumes:
      - ${REDIS_VOLUMN}:/data
   rabbitmq:
@@ -27,6 +29,8 @@ services:
     container_name: rabbitmq_bigstream
     networks:
      - backend
+    ports:
+     - "5672:5672"
     volumes:
      - ${RABBITMQ_CONFIG}:/etc/rabbitmq/rabbitmq.config
      - ${RABBITMQ_VOLUMN}:/var/lib/rabbitmq
