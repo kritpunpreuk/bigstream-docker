@@ -24,7 +24,7 @@ RUN	mkdir -p /var/bigstream/data
 RUN	sed -i 's/127.0.0.1/redis_bigstream/g' ~/node-bigstream/conf/memstore.json
 RUN sed -i 's/127.0.0.1/rabbitmq_bigstream/g' ~/node-bigstream/conf/amqp.json
 RUN  nodejs /root/node-bigstream/script/install_plugins.js
-COPY config.sh .
+COPY ../config.sh .
 RUN chmod 755 config.sh
 EXPOSE 19980 19080 19180
 
