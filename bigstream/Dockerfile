@@ -1,5 +1,8 @@
 FROM ubuntu
-MAINTAINER GCS
+MAINTAINER KP
+
+# Updated : 23 Nov 2017
+
 ################# Install packages #############################
 # install curl, wget, git, vim, python
 RUN apt-get update 
