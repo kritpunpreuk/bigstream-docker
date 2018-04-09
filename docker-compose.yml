@@ -4,6 +4,7 @@ services:
     image: "bigstream:${BIGSTREAM_TAG}"
     build: ./bigstream/
     container_name: node_bigstream
+    restart: always
     networks:
      - frontend
      - backend
@@ -17,6 +18,7 @@ services:
     image: "redis:${REDIS_TAG}"
     command: redis-server --appendonly yes
     container_name: redis_bigstream
+    restart: always
     networks:
      - backend
     ports:
@@ -27,6 +29,7 @@ services:
     image: "rabbitmq:${RABBITMQ_TAG}"
     command: rabbitmq-server --hostname rabbitmq_bigstream
     container_name: rabbitmq_bigstream
+    restart: always
     networks:
      - backend
     ports:
