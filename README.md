@@ -1,4 +1,6 @@
 # BigStream Docker
+Lastest Release version 1.0 : [here](https://github.com/kritpunpreuk/bigstream-docker/archive/1.0.tar.gz)
+
 Docker Image for [BigStream](https://github.com/igridproject/node-bigstream)
 
 from orginal bundle version : [bigstream-docker](https://github.com/igridproject/bigstream-docker)
