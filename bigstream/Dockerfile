@@ -17,7 +17,10 @@ RUN	apt-get install -y build-essential
 RUN	npm install -y pm2@latest -g
 
 # big-stream clone
-RUN git clone https://github.com/igridproject/node-bigstream.git ~/node-bigstream
+RUN wget https://github.com/igridproject/node-bigstream/archive/1.0.tar.gz
+RUN tar -xvf 1.0.tar.gz
+RUN rm -rf 1.0.tar.gz
+RUN mv node-bigstream-1.0 ~/node-bigstream
 
 WORKDIR /root/node-bigstream
 
