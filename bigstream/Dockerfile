@@ -1,7 +1,7 @@
 FROM ubuntu
 MAINTAINER KP
 
-# Updated : 23 Nov 2017
+# Updated : 10 May 2018
 
 ################# Install packages #############################
 # install curl, wget, git, vim, python
@@ -9,7 +9,7 @@ RUN apt-get update
 RUN apt-get install -y curl wget git python vim libssl-dev
 
 # nodeJS
-RUN	curl -sL https://deb.nodesource.com/setup_7.x | bash -
+RUN	curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN	apt-get install -y nodejs
 RUN	apt-get install -y build-essential
 
